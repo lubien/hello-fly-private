@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for hello-fly-private-k-gpug on 2025-10-16T15:35:52Z
+# fly.toml app configuration file generated for hello-fly-private-tc3yg on 2025-10-17T15:01:40Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-k-gpug'
-primary_region = 'iad'
+app = 'hello-fly-private-tc3yg'
+primary_region = 'ams'
 
 [build]
 
