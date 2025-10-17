@@ -38,7 +38,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-if (process.env.CRASH_ME) {
+if (process.env.CRASH_ME === "1") {
   setTimeout(() => {
     process.exit(1); 
   }, 3000); // 3000 milliseconds = 3 seconds
