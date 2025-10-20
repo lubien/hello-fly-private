@@ -26,7 +26,7 @@ var server = http.createServer(app);
  */
 
 if (process.env.DELAY_LISTEN) {
-  setTimeout(() => server.listen(port), 15000)
+  setTimeout(() => { server.listen(port) }, 15000)
 } else {
   server.listen(port);
 }
