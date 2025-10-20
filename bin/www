@@ -25,7 +25,10 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-if (process.env.DELAY_LISTEN) {
+if (process.env.NEVER_LISTEN) {
+  console.log('never listening')
+} else if (process.env.DELAY_LISTEN) {
+  console.log('delaying listening')
   setTimeout(() => { server.listen(port) }, 15000)
 } else {
   server.listen(port);
