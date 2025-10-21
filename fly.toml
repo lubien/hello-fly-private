@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for hello-fly-private-3rzncw on 2025-10-21T13:04:35Z
+# fly.toml app configuration file generated for hello-fly-private-jw7o3w on 2025-10-21T20:03:08Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-3rzncw'
+app = 'hello-fly-private-jw7o3w'
 primary_region = 'ams'
 
 [build]
