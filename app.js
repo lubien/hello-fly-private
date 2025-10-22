@@ -44,4 +44,103 @@ if (process.env.CRASH_ME === "1") {
   }, 3000); // 3000 milliseconds = 3 seconds
 }
 
+
+class MemoryConsumer {
+  constructor() {
+    this.memoryHog = [];
+    this.isRunning = false;
+    this.intervalId = null;
+    this.stats = {
+      iterations: 0,
+      startTime: Date.now(),
+      allocatedMB: 0
+    };
+  }
+
+  // Allocate memory in chunks
+  allocateMemory(sizeInMB = 10) {
+    const bytes = sizeInMB * 1024 * 1024;
+    const buffer = new Array(bytes / 8).fill('X'.repeat(8));
+    this.memoryHog.push(buffer);
+    this.stats.allocatedMB += sizeInMB;
+  }
+
+  // Get current memory usage
+  getMemoryUsage() {
+    const usage = process.memoryUsage();
+    return {
+      rss: Math.round(usage.rss / 1024 / 1024), // MB
+      heapTotal: Math.round(usage.heapTotal / 1024 / 1024),
+      heapUsed: Math.round(usage.heapUsed / 1024 / 1024),
+      external: Math.round(usage.external / 1024 / 1024)
+    };
+  }
+
+  // Print stats
+  logStats() {
+    const mem = this.getMemoryUsage();
+    const runtime = Math.round((Date.now() - this.stats.startTime) / 1000);
+    
+    console.log('\n--- Memory Stats ---');
+    console.log(`Runtime: ${runtime}s | Iterations: ${this.stats.iterations}`);
+    console.log(`RSS: ${mem.rss}MB | Heap Used: ${mem.heapUsed}MB`);
+    console.log(`Heap Total: ${mem.heapTotal}MB | External: ${mem.external}MB`);
+    console.log(`Allocated: ~${this.stats.allocatedMB}MB`);
+    console.log('-------------------\n');
+  }
+
+  // Start consuming memory
+  start(chunkSizeMB = 10, intervalMs = 500) {
+    if (this.isRunning) {
+      console.log('Already running!');
+      return;
+    }
+
+    console.log(`Starting memory consumption test...`);
+    console.log(`Chunk size: ${chunkSizeMB}MB | Interval: ${intervalMs}ms\n`);
+    
+    this.isRunning = true;
+    this.stats.startTime = Date.now();
+
+    this.intervalId = setInterval(() => {
+      try {
+        this.allocateMemory(chunkSizeMB);
+        this.stats.iterations++;
+        this.logStats();
+      } catch (error) {
+        console.error('Memory allocation failed:', error.message);
+        this.stop();
+      }
+    }, intervalMs);
+  }
+
+  // Stop consuming memory
+  stop() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+    this.isRunning = false;
+    console.log('\nMemory consumption stopped.');
+    this.logStats();
+  }
+
+  // Clear allocated memory
+  clear() {
+    this.memoryHog = [];
+    this.stats.allocatedMB = 0;
+    if (global.gc) {
+      global.gc();
+      console.log('Garbage collection triggered (if --expose-gc flag is set)');
+    }
+  }
+}
+
+if (process.env.OOM) {
+  const memoryMb = +process.env.OOM;
+  
+  const consumer = new MemoryConsumer();
+  consumer.start(memoryMb, 500);
+}
+
 module.exports = app;
