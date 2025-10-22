@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for hello-fly-private-cdz3sq on 2025-10-22T12:12:53Z
+# fly.toml app configuration file generated for hello-fly-private-nu-uag on 2025-10-22T14:39:26Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-cdz3sq'
+app = 'hello-fly-private-nu-uag'
 primary_region = 'gru'
 
 [build]
