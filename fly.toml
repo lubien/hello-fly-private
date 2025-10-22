@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for hello-fly-private-kfgxga on 2025-10-21T20:15:22Z
+# fly.toml app configuration file generated for hello-fly-private-ss0idg on 2025-10-22T11:29:28Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-kfgxga'
+app = 'hello-fly-private-ss0idg'
 primary_region = 'gru'
 
 [build]
