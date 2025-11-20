@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for hello-fly-private-t-pp8q on 2025-11-20T14:42:13Z
+# fly.toml app configuration file generated for hello-fly-private-fef71a on 2025-11-20T18:38:14Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-t-pp8q'
-primary_region = 'iad'
+app = 'hello-fly-private-fef71a'
+primary_region = 'gru'
 
 [build]
 
