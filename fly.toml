@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for hello-fly-private-q6k4yq on 2026-05-07T19:29:38Z
+# fly.toml app configuration file generated for hello-fly-private-q6k4yq on 2026-05-08T11:02:10Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -17,8 +17,8 @@ primary_region = 'ams'
   processes = ['app']
 
 [[vm]]
-  memory = '512mb'
+  memory = '2gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 512
+  memory_mb = 2048
   size = 'shared-cpu-1x'
