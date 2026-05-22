@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-22T14:55:24Z
+# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-22T16:23:57Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -11,9 +11,9 @@ primary_region = 'gru'
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = 'suspend'
-  auto_start_machines = true
-  min_machines_running = 1
+  auto_stop_machines = 'stop'
+  auto_start_machines = false
+  min_machines_running = 2
   processes = ['app', 'replica']
 
 [[vm]]
