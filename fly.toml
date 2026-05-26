@@ -1,10 +1,11 @@
-# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-26T11:41:24Z
+# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-26T12:32:12Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'hello-fly-private-asdasd123'
 primary_region = 'gru'
+console_command = 'bash'
 
 [build]
 
