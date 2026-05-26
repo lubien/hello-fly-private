@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-26T18:26:56Z
+# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-26T18:37:24Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -54,3 +54,7 @@ console_command = 'bash'
   policy = 'always'
   processes = ['app']
   retries = 9
+
+[[restart]]
+  policy = 'never'
+  processes = ['replica']
