@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-26T11:15:46Z
+# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-26T11:28:38Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -41,9 +41,10 @@ primary_region = 'gru'
 
 [processes]
   app = ''
+  replica = ''
 
 [deploy]
   release_command = 'sleep 62'
   release_command_timeout = '15s'
-  strategy = 'canary'
+  strategy = 'immediate'
   wait_timeout = '1m'
