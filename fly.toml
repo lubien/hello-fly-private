@@ -1,13 +1,23 @@
-# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-27T12:34:30Z
+# fly.toml app configuration file generated for hello-fly-private-dddd on 2026-05-27T14:53:47Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-asdasd123'
-primary_region = 'gru'
+app = 'hello-fly-private-dddd'
+primary_region = 'ams'
 console_command = 'bash'
 
 [build]
+
+[deploy]
+  strategy = 'immediate'
+  wait_timeout = '1m0s'
+  release_command = 'sleep 1'
+  release_command_timeout = '15s'
+
+[processes]
+  app = ''
+  replica = ''
 
 [http_service]
   internal_port = 8080
@@ -17,40 +27,30 @@ console_command = 'bash'
   min_machines_running = 2
   processes = ['app', 'replica']
 
+[[restart]]
+  policy = 'always'
+  retries = 10
+  processes = ['app']
+
 [[vm]]
+  size = 'shared-cpu-1x'
   memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 512
-  size = 'shared-cpu-1x'
 
 [[vm]]
+  size = 'shared-cpu-1x'
   memory = '2gb'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 2048
-  size = 'shared-cpu-1x'
   processes = ['app']
 
 [[vm]]
+  size = 'shared-cpu-1x'
   memory = '256mb'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 256
-  size = 'shared-cpu-1x'
   processes = ['replica']
-
-[processes]
-  app = ''
-  replica = ''
-
-[deploy]
-  strategy = 'immediate'
-  wait_timeout = '1m'
-  release_command = 'sleep 1'
-  release_command_timeout = '15s'
-
-[[restart]]
-  policy = 'always'
-  processes = ['app']
-  retries = 10
