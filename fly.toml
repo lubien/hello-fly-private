@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-27T12:30:31Z
+# fly.toml app configuration file generated for hello-fly-private-asdasd123 on 2026-05-27T12:34:30Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -14,7 +14,7 @@ console_command = 'bash'
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
-  min_machines_running = 1
+  min_machines_running = 2
   processes = ['app', 'replica']
 
 [[vm]]
