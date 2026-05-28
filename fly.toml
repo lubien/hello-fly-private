@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for hello-fly-private-dddd on 2026-05-27T14:53:47Z
+# fly.toml app configuration file generated for hello-fly-privatef234 on 2026-05-28T20:37:20Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-dddd'
+app = 'hello-fly-privatef234'
 primary_region = 'ams'
 console_command = 'bash'
 
