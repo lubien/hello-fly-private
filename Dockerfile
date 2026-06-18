@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm ins2tall
+RUN npm ins23tall
 # If you are building your code for production
 # RUN npm ci --only=production
 
