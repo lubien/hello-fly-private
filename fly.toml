@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for hello-fly-private-asdasd on 2026-06-05T12:37:13Z
+# fly.toml app configuration file generated for hello-fly-private-vdnvzg on 2026-06-18T17:07:08Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-asdasd'
+app = 'hello-fly-private-vdnvzg'
 primary_region = 'gru'
 
 [build]
