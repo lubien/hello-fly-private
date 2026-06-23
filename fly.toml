@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for hello-fly-private-vdnvzg on 2026-06-18T17:13:08Z
+# fly.toml app configuration file generated for hello-fly-private-3eriiq on 2026-06-23T11:53:39Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-vdnvzg'
-primary_region = 'gru'
+app = 'hello-fly-private-3eriiq'
+primary_region = 'ams'
 
 [build]
 
