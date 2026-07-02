@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for hello-fly-private-3eriiq on 2026-06-23T11:53:39Z
+# fly.toml app configuration file generated for meu-querido-app on 2026-07-02T14:07:10Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-3eriiq'
-primary_region = 'ams'
+app = 'meu-querido-app'
+primary_region = 'gru'
 
 [build]
 
