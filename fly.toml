@@ -1,13 +1,13 @@
-# fly.toml app configuration file generated for hello-fly-private-3eriiq on 2026-07-31T15:12:56Z
+# fly.toml app configuration file generated for hello-fly-private-3eriiq on 2026-07-31T15:14:59Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'hello-fly-private-3eriiq'
-primary_region = 'fra'
-kill_signal = 'SIGKILL'
-kill_timeout = '15s'
-swap_size_mb = 128
+primary_region = 'gru'
+kill_signal = 'SIGINT'
+kill_timeout = '6s'
+swap_size_mb = 0
 
 [build]
 
