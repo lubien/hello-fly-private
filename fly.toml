@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for hello-fly-private-3eriiq on 2026-07-31T15:10:41Z
+# fly.toml app configuration file generated for hello-fly-private-3eriiq on 2026-07-31T15:12:56Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -37,3 +37,8 @@ swap_size_mb = 128
   release_command = 'sleep 10'
   release_command_timeout = '1m'
   strategy = 'bluegreen'
+
+[[restart]]
+  policy = 'never'
+  processes = ['app']
+  retries = 10
