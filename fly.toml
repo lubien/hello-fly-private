@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for hello-fly-private-3eriiq on 2026-07-31T15:09:41Z
+# fly.toml app configuration file generated for hello-fly-private-3eriiq on 2026-07-31T15:10:41Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -14,9 +14,9 @@ swap_size_mb = 128
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'suspend'
   auto_start_machines = true
-  min_machines_running = 0
+  min_machines_running = 1
   processes = ['app']
 
 [[vm]]
@@ -32,3 +32,8 @@ swap_size_mb = 128
   memory_mb = 256
   processes = ['app']
   size = 'shared-cpu-1x'
+
+[deploy]
+  release_command = 'sleep 10'
+  release_command_timeout = '1m'
+  strategy = 'bluegreen'
