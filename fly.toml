@@ -1,15 +1,21 @@
-# fly.toml app configuration file generated for hello-fly-private-3eriiq on 2026-08-10T19:20:46Z
+# fly.toml app configuration file generated for hello-fly-private-h713zq on 2026-08-20T12:56:11Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-3eriiq'
-primary_region = 'gru'
+app = 'hello-fly-private-h713zq'
+primary_region = 'ams'
 kill_signal = 'SIGINT'
 kill_timeout = '6s'
 swap_size_mb = 0
 
 [build]
+
+[deploy]
+  strategy = 'canary'
+  max_unavailable = 0.99
+  release_command = 'sleep 10'
+  release_command_timeout = '1m0s'
 
 [http_service]
   internal_port = 8080
@@ -19,6 +25,11 @@ swap_size_mb = 0
   min_machines_running = 1
   processes = ['app']
 
+[[restart]]
+  policy = 'never'
+  retries = 10
+  processes = ['app']
+
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
@@ -26,20 +37,9 @@ swap_size_mb = 0
   memory_mb = 256
 
 [[vm]]
+  size = 'shared-cpu-1x'
   memory = '256mb'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 256
   processes = ['app']
-  size = 'shared-cpu-1x'
-
-[deploy]
-  release_command = 'sleep 10'
-  release_command_timeout = '1m0s'
-  strategy = 'canary'
-  max_unavailable = 0.99
-
-[[restart]]
-  policy = 'never'
-  processes = ['app']
-  retries = 10
