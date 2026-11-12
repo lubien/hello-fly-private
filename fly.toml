@@ -1,16 +1,15 @@
-# fly.toml app configuration file generated for hello-fly-private-h713zq on 2026-08-20T12:56:11Z
+# fly.toml app configuration file generated for hello-fly-private-yz9mzg on 2026-11-12T12:24:49Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'hello-fly-private-asdasd'
-primary_region = 'ams'
+app = 'hello-fly-private-yz9mzg'
+primary_region = 'gru'
 kill_signal = 'SIGINT'
 kill_timeout = '6s'
 swap_size_mb = 0
 
 [build]
-
 [deploy]
   strategy = 'canary'
   max_unavailable = 0.99
