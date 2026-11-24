@@ -1,0 +1,5 @@
+build-command: npm ci
+services:
+  web:
+    start: exec npm start
+    port: 8080
